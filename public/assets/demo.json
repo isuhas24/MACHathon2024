@@ -1,0 +1,18 @@
+{
+    "items":[
+       {
+          "desc":"Classic delight with 100% real mozzarella cheese",
+          "id":1,
+          "img":["https://firebasestorage.googleapis.com/v0/b/pizza-man-61510.appspot.com/o/img%2Fmargherita.webp?alt=media&token=721d918a-1a56-40c4-a882-b168e8220122","https://english.cdn.zeenews.com/sites/default/files/2022/07/15/1065454-untitled-design-65.jpg","https://c.ndtvimg.com/2021-06/qkkkbj68_pizza_625x300_13_June_21.jpg","https://yummyindiankitchen.com/wp-content/uploads/2022/03/optavia-pizza-with-chicken-500x375.jpg"],
+          "name":"Margherita",
+          "price":298,
+          "productCode": "FBB00024",
+          "type": "pizza",
+          "availability": "In Stock",
+          "shipping": "In 1 hr (Free Delivery)",
+          "attributes":{
+              "size": ["small", "medium", "large"]
+          }
+       }
+    ]
+}
