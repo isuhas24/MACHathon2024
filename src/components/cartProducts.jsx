@@ -18,24 +18,31 @@ const CartProduct = () => {
 
   useEffect(() => {
     if (sku) {
-      axios.post("http://localhost:8080/carts/addAnonCart", {
-        "sku": sku,
-        "quantity": 1
-      })
-      .then(response => {
-        console.log('POST request successful:', response);
-        console.log('anonymousId:', response.data.anonymousId)
-        console.log('product price:', response.data.totalPrice.centAmount);
-        console.log('product name:', response.data.lineItems[0].name['en-GB']);
+      axios
+        .post(
+          "http://greenleap.ap-south-1.elasticbeanstalk.com/carts/addAnonCart",
+          {
+            sku: sku,
+            quantity: 1,
+          }
+        )
+        .then((response) => {
+          console.log("POST request successful:", response);
+          console.log("anonymousId:", response.data.anonymousId);
+          console.log("product price:", response.data.totalPrice.centAmount);
+          console.log(
+            "product name:",
+            response.data.lineItems[0].name["en-GB"]
+          );
 
-        setProductData(response.data.lineItems[0]); 
-        console.log('img:', response.data.lineItems[0].variant.images[0].url)
-        setproductImg(response.data.lineItems[0].variant.images[0].url)
-        localStorage.setItem("anonymousId", response.data.anonymousId);
-      })
-      .catch(error => {
-        console.error('Error making POST request:', error);
-      });
+          setProductData(response.data.lineItems[0]);
+          console.log("img:", response.data.lineItems[0].variant.images[0].url);
+          setproductImg(response.data.lineItems[0].variant.images[0].url);
+          localStorage.setItem("anonymousId", response.data.anonymousId);
+        })
+        .catch((error) => {
+          console.error("Error making POST request:", error);
+        });
     }
   }, [sku]); 
 

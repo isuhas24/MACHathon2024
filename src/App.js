@@ -6,10 +6,6 @@ import Header from "./components/header/header";
 import "./app.css";
 import Payment from "./components/Payment";
 
-
-
-
-
 const App = () => {
   return (
     <div className="App">

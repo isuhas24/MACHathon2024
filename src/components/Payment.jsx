@@ -23,22 +23,27 @@ const Payment = () => {
         e.preventDefault();
         console.log(shippingAddress)
         console.log(anonymousId)
-        axios.post('http://localhost:8080/shippingAddress/addAddress', shippingAddress, {
-        params: {
-            anonymousId: anonymousId
-        }
-    })
-    .then(response => {
-        // Handle response if needed
-        console.log('Shipping Address Added:', response.data);
-        toast.success('Address saved successfully');
-        setPaymentAccordionOpen(true);
-        setAddressAccordionOpen(false);
-    })
-    .catch(error => {
-        // Handle error if needed
-        console.error('Error adding Shipping Address:', error);
-    });
+        axios
+          .post(
+            "http://greenleap.ap-south-1.elasticbeanstalk.com/shippingAddress/addAddress",
+            shippingAddress,
+            {
+              params: {
+                anonymousId: anonymousId,
+              },
+            }
+          )
+          .then((response) => {
+            // Handle response if needed
+            console.log("Shipping Address Added:", response.data);
+            toast.success("Address saved successfully");
+            setPaymentAccordionOpen(true);
+            setAddressAccordionOpen(false);
+          })
+          .catch((error) => {
+            // Handle error if needed
+            console.error("Error adding Shipping Address:", error);
+          });
     }
         const handleInputChange = (e) => {
             const { id, value } = e.target;
