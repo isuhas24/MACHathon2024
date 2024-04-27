@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import "./payment.css"
 
 
 
@@ -49,7 +50,7 @@ const Payment = () => {
         };
     return(
         <>
-            <div class="accordion" id="accordionExample">
+            <div class="accordion shipping" id="accordionExample">
                 <div class="accordion-item">
                     <h2 class="accordion-header">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
