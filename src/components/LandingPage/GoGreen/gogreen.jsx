@@ -3,6 +3,7 @@ import { client } from "../../../client";
 import "./gogreen.css";
 import About from "../About/about";
 import GoGreenSectionOne from "./gogreensection1";
+import ContactUs from "../../ContactUs/contactus";
 
 export default function GoGreen() {
   const [isGoGreenLoading, setIsGoGreenLoading] = useState(false);
@@ -79,6 +80,9 @@ export default function GoGreen() {
       {/* <div>
         <About />
       </div> */}
+      <div>
+        <ContactUs />
+      </div>
     </div>
   );
 }

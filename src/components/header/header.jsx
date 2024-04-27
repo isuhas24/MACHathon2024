@@ -14,7 +14,7 @@ const Header = () => {
   return (
     <div className="Headercontainer">
       <header id="header">
-        <img src="Images/logo.png" alt="" />
+        <img src="Images/logo.jpg" alt="" />
         <div className="icons">
           <MdOutlineQrCodeScanner onClick={toggleScanner} />
           <IoMdCart />
