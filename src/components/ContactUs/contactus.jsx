@@ -1,65 +1,32 @@
-import React, { useState } from "react";
+import React from "react";
+import { FaWhatsapp, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import "./contactus.css";
 
 const ContactUs = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // You can handle form submission here, like sending data to backend
-    console.log(formData);
-    // Reset form fields
-    setFormData({ name: "", email: "", message: "" });
-  };
-
   return (
     <div className="contact-container">
-      <div className="form-wrapper">
+      <div className="contact-details">
         <h2>Contact Us</h2>
-        <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label htmlFor="name">Name:</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="email">Email:</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="message">Message:</label>
-            <textarea
-              id="message"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              required
-            ></textarea>
-          </div>
-          <button type="submit">Submit</button>
-        </form>
+        <div className="details">
+          <p>
+            <strong>
+              <FaWhatsapp /> WhatsApp:
+            </strong>{" "}
+            +9876543210
+          </p>
+          <p>
+            <strong>
+              <FaEnvelope /> Email:
+            </strong>{" "}
+            deepak.singhal@valtech.com
+          </p>
+          <p>
+            <strong>
+              <FaMapMarkerAlt /> Address:
+            </strong>{" "}
+            Mass Unique building,Valtech
+          </p>
+        </div>
       </div>
     </div>
   );
