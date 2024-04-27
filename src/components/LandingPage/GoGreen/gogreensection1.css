@@ -20,7 +20,7 @@
 }
 
 .goGreenSectionOne-contentWrap {
-  background-color: rgba(0, 0, 0, 0.5); 
+  background-color: rgba(0, 0, 0, 0.1); 
   position: absolute;
   bottom: 0;
   left: 0;
@@ -30,7 +30,7 @@
 }
 
 .goGreenSectionOne-title {
-    margin-top: 20%;
+    margin-top: 23%;
   font-size: 80px;
   margin-bottom: 20px;
 }
@@ -39,4 +39,19 @@
   font-size: 28px;
 }
 
+@media only screen and (max-width: 768px) {
+  .goGreenSectionOne-image {
+    height: 50vh; /* Decrease the height of the image for smaller screens */
+  }
+  
+  .goGreenSectionOne-title {
+    font-size: 40px; /* Decrease the font size of the title for smaller screens */
+    margin-top: 40%; /* Adjust margin top for smaller screens */
+    margin-bottom: 10px; /* Adjust margin bottom for smaller screens */
+  }
+
+  .goGreenSectionOne-description {
+    font-size: 20px; /* Decrease the font size of the description for smaller screens */
+  }
+}
 
