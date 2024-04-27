@@ -1,0 +1,46 @@
+{
+    "items": [
+        {
+            "id": 17,
+            "img":  "https://firebasestorage.googleapis.com/v0/b/pizza-man-61510.appspot.com/o/img%2FChoco_Lava.webp?alt=media&token=fa50ccb3-7c4a-47bd-96d1-be67e367f79b",
+            "desc": "Indulgent, gooey molten lava filled cake",
+            "name": "Choco Lava Cake",
+            "price": 99,
+            "discount": 25,
+            "availableStock": 38
+        },
+        {
+            "id": 18,
+            "img": "https://firebasestorage.googleapis.com/v0/b/pizza-man-61510.appspot.com/o/img%2FButterscotch.webp?alt=media&token=f84d2cfc-d17c-4dae-810c-d22af8b5e6ac",
+            "desc": "Sweet temptation! Butterscotch mousse",
+            "name": "Butterscotch Mousse",
+            "price": 99,
+            "availableStock": 12
+        },
+        {
+            "id": 19,
+            "img": "https://firebasestorage.googleapis.com/v0/b/pizza-man-61510.appspot.com/o/img%2FBrownie_Fantasy.webp?alt=media&token=61c7f537-b683-4a9b-b6fa-2a85ff35df6f",
+            "desc": "Cholcolate drizzeled Hot Chocolate Brownie",
+            "name": "Brownie Fantasy",
+            "price": 99,
+            "availableStock": 97
+        },
+        {
+            "id": 12,
+            "img": "https://firebasestorage.googleapis.com/v0/b/pizza-man-61510.appspot.com/o/img%2FCheesy.webp?alt=media&token=0a6d2a09-6661-4e15-b2d3-161e32d116ba",
+            "desc": "An all-time fav! A Cheesy indulgence",
+            "name": "Cheesy Dip",
+            "price": 25,
+            "discount": 10,
+            "availableStock": 23
+        },
+        {
+            "id": 13,
+            "img": "https://firebasestorage.googleapis.com/v0/b/pizza-man-61510.appspot.com/o/img%2FCrinkle_Fries.webp?alt=media&token=1b3bad75-67fa-4350-8027-98b2aec8bcbf",
+            "desc": "Hot crispy wavy masala coated fries",
+            "name": "Crinkle Fries",
+            "price": 59,
+            "availableStock": 45
+        }
+    ]
+}

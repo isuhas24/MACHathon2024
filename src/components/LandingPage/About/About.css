@@ -1,0 +1,36 @@
+
+
+.row {
+  display: flex;
+  align-items: center;
+}
+
+.column {
+  padding: 1%;
+}
+
+.titleText {
+
+  font-size: 40px;
+  font-weight: bold;
+  color: #333;
+}
+
+.imageWrap {
+  width: 70%;
+ 
+}
+
+.imageWrap img {
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+  }
+
+  .column {
+    width: 100%;
+  }
+}
