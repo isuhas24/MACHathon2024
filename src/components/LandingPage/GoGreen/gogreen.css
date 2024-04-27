@@ -1,16 +1,19 @@
 .goGreen-slideWrap {
   display: flex;
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   border-radius: 8px;
 }
 
 .goGreen-contentWrap {
-  margin: 2%;
+  margin: 4%;
   border-radius: 8px;
   flex: 1;
   padding: 20px;
-  background-color: #f0f0f0; 
+  background-image: url('../../../../public/Images/background.png'); 
+  background-size: cover;
+  background-position: center;
+  color: white;
 }
 
 .goGreen-title {
@@ -30,11 +33,19 @@
 }
 
 .goGreen-slideWrap.type1 .goGreen-contentWrap {
-  background-color: #cfe8fc;
+  /* background-color: #cfe8fc; */
+  
+  background-image: url('../../../../public/Images/background.png'); 
+  background-size: cover;
+  background-position: center;
+
 }
 
 .goGreen-slideWrap.type2 .goGreen-contentWrap {
-  background-color: #fcd5c4; 
+  /* background-color: #fcd5c4;  */
+  background-image: url('../../../../public/Images/background.png'); 
+  background-size: cover;
+  background-position: center;
 }
 
 .goGreen-slideWrap.type2 {
