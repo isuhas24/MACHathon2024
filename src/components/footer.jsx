@@ -4,40 +4,37 @@ import "../styles/mobile.css";
 let Footer = () =>{
     return(
         <footer>
-            {/* footer Content */}
           <section>
-            {/* Different Categories and About */}
             <article className="about">
-              {/* Different Categories of goods available */}
               <div className="categories">
                 <h4>Categories</h4>
                 <div className="subcategory">
                   <div>
-                    <p>
-                      Vegetables & Fruits <br />
-                      Breakfast & Instant food <br />
-                      Bakery & Biscuits <br />
-                      Atta, rice & dal <br />
-                      Sauces & spreads <br />
-                      Organic & gourmet <br />
-                      Baby Care <br />
-                      Cleaning essentials <br />
-                      Personal Care
-                    </p>
+                  <p>
+  Biodegradable Plates <br />
+  Biodegradable Straws <br />
+  Biodegradable Bags <br />
+  Biodegradable Cutlery <br />
+  Food Packaging <br />
+  Cleaning Products <br />
+  Biodegradable Plant Pots <br />
+  Biodegradable Clothing
+</p>
+
                   </div>
   
                   <div>
-                    <p>
-                      Dairy, bread & eggs <br />
-                      Cold drinks & juices <br />
-                      Tea, coffee & drinks <br />
-                      Masala, oil & more <br />
-                      Chicken, meat & fish <br />
-                      Paan corner <br />
-                      Pharma & wellness <br />
-                      Home & office <br />
-                      Pet care
-                    </p>
+                  <p>
+  Biodegradable  Utensils <br />
+  Eco-friendly  Stirrers <br />
+  Compostable  Packaging <br />
+  Sustainable  Kitchenware <br />
+  Plant-based Containers <br />
+  Natural Solutions <br />
+  Organic Supplies <br />
+   Clothing & Textiles
+</p>
+
                   </div>
                 </div>
               </div>

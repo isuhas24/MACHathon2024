@@ -23,7 +23,7 @@ const Payment = () => {
         e.preventDefault();
         console.log(shippingAddress)
         console.log(anonymousId)
-        axios.post('http://localhost:8083/shippingAddress/addAddress', shippingAddress, {
+        axios.post('http://localhost:8080/shippingAddress/addAddress', shippingAddress, {
         params: {
             anonymousId: anonymousId
         }
@@ -104,8 +104,14 @@ const Payment = () => {
                     </h2>
                     <div id="collapseTwo" className={`accordion-collapse collapse ${paymentAccordionOpen ? 'show' : ''}`} data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                    </div>
+                        <input type="radio" id="cash-on-delivery" name="payment-mode" value="cash-on-delivery" />
+                        <label htmlFor="cash-on-delivery">Cash on Delivery</label>
+
+
+                        <input type="radio" id="stripe" name="payment-mode" value="stripe" />
+                        <label htmlFor="stripe">Stripe</label>
+                        </div>
+
                     </div>
                 </div>
             </div>
