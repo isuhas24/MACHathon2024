@@ -26,7 +26,7 @@ const Payment = () => {
         e.preventDefault();
         console.log(shippingAddress)
         console.log(anonymousId)
-        axios.post('http://localhost:8083/shippingAddress/addAddress', shippingAddress, {
+        axios.post('http://localhost:8080/shippingAddress/addAddress', shippingAddress, {
         params: {
             anonymousId: anonymousId
         }
@@ -108,6 +108,7 @@ const Payment = () => {
                     </h2>
 
                     <div id="collapseTwo" className={`accordion-collapse collapse ${paymentAccordionOpen ? 'show' : ''}`} data-bs-parent="#accordionExample">
+
                         <div class="accordion-body">
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2"/>
