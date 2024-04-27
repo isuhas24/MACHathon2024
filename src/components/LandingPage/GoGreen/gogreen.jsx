@@ -80,9 +80,9 @@ export default function GoGreen() {
       {/* <div>
         <About />
       </div> */}
-      {/* <div>
+      <div>
         <ContactUs />
-      </div> */}
+      </div>
     </div>
   );
 }
