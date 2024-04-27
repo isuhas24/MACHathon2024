@@ -17,10 +17,10 @@ const Header = () => {
         <img src="Images/logo.jpg" alt="" />
         <div className="icons">
           <MdOutlineQrCodeScanner onClick={toggleScanner} />
-          <IoMdCart />
+          <IoMdCart  />
         </div>
       </header>
-      {showScanner && <ScannerComponent />}
+      {showScanner && <ScannerComponent  />}
     </div>
   );
 };

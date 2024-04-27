@@ -14,7 +14,7 @@ const Cart = () => {
       <br />
       <div className={style.cart_body}>
         <h1 className={style.cart_heading}>Shopping Cart</h1>
-        <h4 className={style.cart_heading}>Shopping in 382480</h4>
+
 
         <div className={style.grid_container}>
           <div className={style.cart_item}>
