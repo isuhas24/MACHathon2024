@@ -1,7 +1,55 @@
 import React, { useState } from 'react';
 
+
+import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
+
 const Payment = () => {
+
+    const [shippingAddress, setShippingAddress] = useState({
+        floor: '',
+        building: '',
+        door: '',
+        city: '',
+        country: ''
+    });
     
+    const [paymentAccordionOpen, setPaymentAccordionOpen] = useState(false);
+    const [AddressAccordionOpen, setAddressAccordionOpen] = useState(true);
+    const anonymousId = localStorage.getItem('anonymousId');
+  
+    const handleShippingAddressSubmit = (e) => {
+        e.preventDefault();
+        console.log(shippingAddress)
+        console.log(anonymousId)
+        axios.post('http://localhost:8083/shippingAddress/addAddress', shippingAddress, {
+        params: {
+            anonymousId: anonymousId
+        }
+    })
+    .then(response => {
+        // Handle response if needed
+        console.log('Shipping Address Added:', response.data);
+        toast.success('Address saved successfully');
+        setPaymentAccordionOpen(true); 
+        setAddressAccordionOpen(false);
+    })
+    .catch(error => {
+        // Handle error if needed
+        console.error('Error adding Shipping Address:', error);
+    });
+    }
+        const handleInputChange = (e) => {
+            const { id, value } = e.target;
+            setShippingAddress(prevState => ({
+                ...prevState,
+                [id]: value
+            }));
+        };
+
     return(
         <>
             <div class="accordion" id="accordionExample">
@@ -11,37 +59,42 @@ const Payment = () => {
                         Shipping Address
                     </button>
                     </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        <form>
-                            <div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <label for="inputEmail4">Email</label>
-                                    <input type="email" class="form-control" id="inputEmail4" placeholder="Email"/>
+                    <div id="collapseOne" className={`accordion-collapse collapse ${AddressAccordionOpen ? 'show' : ''}`} data-bs-parent="#accordionExample">
+                        <div className="accordion-body">
+                            <form onSubmit={handleShippingAddressSubmit}>
+                                <div className="form-row">
+                                    <div className="form-group col-md-6">
+                                        <label htmlFor="inputEmail4">Email</label>
+                                        <input type="email" className="form-control" id="inputEmail4" placeholder="Email" />
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="inputAddress">Address line 1</label>
-                                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St"/>
-                            </div>
-                            <div class="form-group">
-                                <label for="inputAddress2">Address line 2</label>
-                                <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor"/>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <label for="inputCity">City</label>
-                                    <input type="text" class="form-control" id="inputCity"/>
+                                <div className="form-group">
+                                    <label htmlFor="door">Door No:</label>
+                                    <input type="string" className="form-control" id="door" onChange={handleInputChange} />
                                 </div>
-                                <div class="form-group col-md-4">
-                                    <label for="inputState">State</label>
-                                    <input type="text" class="form-control" id="inputState"/>
+                                <div className="form-group">
+                                    <label htmlFor="inputAddress">Address line 1 :Floor</label>
+                                    <input type="string" className="form-control" id="floor" onChange={handleInputChange} />
                                 </div>
-                                <div class="form-group col-md-2">
-                                    <label for="inputZip">Zip</label>
-                                    <input type="text" class="form-control" id="inputZip"/>
+                                <div className="form-group">
+                                    <label htmlFor="inputAddress2">Building</label>
+                                    <input type="string" className="form-control" id="building" onChange={handleInputChange} />
                                 </div>
-                            </div>
+                                <div className="form-row">
+                                    <div className="form-group col-md-6">
+                                        <label htmlFor="inputCity">City</label>
+                                        <input type="string" className="form-control" id="city" onChange={handleInputChange} />
+                                    </div>
+                                    <div className="form-group col-md-4">
+                                        <label htmlFor="inputState">Country</label>
+                                        <input type="string" className="form-control" id="country" onChange={handleInputChange} />
+                                    </div>
+                                    <div className="form-group col-md-2">
+                                        <label htmlFor="inputZip">Zip</label>
+                                        <input type="string" className="form-control" id="inputZip" />
+                                    </div>
+                                </div>
+                                <button type="submit" className="btn btn-primary btn-success">save</button>
                             </form>
                         </div>
                     </div>
@@ -52,7 +105,8 @@ const Payment = () => {
                         Payment
                     </button>
                     </h2>
-                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+
+                    <div id="collapseTwo" className={`accordion-collapse collapse ${paymentAccordionOpen ? 'show' : ''}`} data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2"/>
@@ -61,11 +115,12 @@ const Payment = () => {
                                 </label>
                             </div>
                             
-                            
-                        </div>
+                           
+                       </div>
                     </div>
                 </div>
             </div>
+            <ToastContainer position="top-right" autoClose={3000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover />
         </>
     )
 }

@@ -1,22 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
-import '../styles/index.css';
-import '../styles/mobile.css';
 import style from "../styles/cartstyles.module.css";
 
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import groceryData from '../grocery.json';
 
-function findItemById(id) {
-  for (const category of groceryData) {
-    for (const item of category.items) {
-      if (item.id == id) {
-        return item;
-      }
-    }
-  }
-  return null;  // Return null if the item with the given id is not found
-}
+
+
 
 const CartSummary = () => {
 
@@ -34,8 +23,7 @@ const CartSummary = () => {
   const getSubtotal = () => {
     let subTotal = 0;
     Object.keys(items).forEach((key) => {
-      let item = findItemById(key);
-      subTotal += (item.price * items[key]);
+      subTotal += (items.price * items[key]);
     });
     return subTotal;
   }
@@ -55,7 +43,7 @@ const CartSummary = () => {
   console.log('Generated Price: ', price);
   console.log('Updated PriceData: ', newPriceData);
 
-  navigate('/checkout');
+  navigate('/');
  };
 
   return (
@@ -83,7 +71,7 @@ const CartSummary = () => {
         </div>
         <br />
         <button onClick={CheckoutClick} className={`${style.action_btn} ${style.primary_action}`} type='submit'>
-          Go to Checkout <span className={style.bold_text}> ${subTotal + 3.00}</span>
+          Place Order <span className={style.bold_text}> ${subTotal + 3.00}</span>
         </button>
         <p>
           <small>By placing your order, you agree to be bound by the Freshcart
