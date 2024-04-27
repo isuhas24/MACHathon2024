@@ -1,7 +1,8 @@
 
 
 import '../styles/index.css';
-import '../styles/mobile.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import React, { useContext, useEffect, useState } from 'react';
 import style from "../styles/cartstyles.module.css";
 import { useNavigate } from 'react-router-dom';
@@ -17,15 +18,15 @@ const CartSummary = ({ totalPrice }) => {
     }
   }, [totalPrice])
 
-  const CheckoutClick = () => {
-    const storedPriceData = JSON.parse(localStorage.getItem('PriceData')) || [];
-    const price = subTotal + 3;
-    const newPriceData = [...storedPriceData, price];
-    localStorage.setItem('PriceData', JSON.stringify(newPriceData));
-    console.log('Generated Price: ', price);
-    console.log('Updated PriceData: ', newPriceData);
-    navigate('/');
-  };
+ 
+
+  const invokeToast = () => {
+    toast.success('Order placed successfully');
+    setTimeout(()=>{
+      navigate('/');
+    },3000)
+   
+  }
 
   return (
     <div>
@@ -51,7 +52,7 @@ const CartSummary = ({ totalPrice }) => {
               </ul>
             </div>
             <br />
-            <button onClick={CheckoutClick} className={`${style.action_btn} ${style.primary_action}`} type='submit'>
+            <button className={`${style.action_btn} ${style.primary_action}`} type='submit' onClick={() => invokeToast()}>
               Place Order <span className={style.bold_text}> ${subTotal + 3.00}</span>
             </button>
             <p>
@@ -75,7 +76,7 @@ const CartSummary = ({ totalPrice }) => {
           </div>
         </div>
       </div>
-   
+      <ToastContainer position="top-right" autoClose={3000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover />
     </div>
   );
 };
