@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
-
-
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
-
-
+ 
+ 
+ 
 const Payment = () => {
-
+ 
     const [shippingAddress, setShippingAddress] = useState({
         floor: '',
         building: '',
@@ -16,16 +14,16 @@ const Payment = () => {
         city: '',
         country: ''
     });
-    
+   
     const [paymentAccordionOpen, setPaymentAccordionOpen] = useState(false);
     const [AddressAccordionOpen, setAddressAccordionOpen] = useState(true);
     const anonymousId = localStorage.getItem('anonymousId');
-  
+ 
     const handleShippingAddressSubmit = (e) => {
         e.preventDefault();
         console.log(shippingAddress)
         console.log(anonymousId)
-        axios.post('http://localhost:8083/shippingAddress/addAddress', shippingAddress, {
+        axios.post('http://localhost:8080/shippingAddress/addAddress', shippingAddress, {
         params: {
             anonymousId: anonymousId
         }
@@ -34,7 +32,7 @@ const Payment = () => {
         // Handle response if needed
         console.log('Shipping Address Added:', response.data);
         toast.success('Address saved successfully');
-        setPaymentAccordionOpen(true); 
+        setPaymentAccordionOpen(true);
         setAddressAccordionOpen(false);
     })
     .catch(error => {
@@ -49,7 +47,6 @@ const Payment = () => {
                 [id]: value
             }));
         };
-
     return(
         <>
             <div class="accordion" id="accordionExample">
@@ -107,16 +104,20 @@ const Payment = () => {
                     </h2>
 
                     <div id="collapseTwo" className={`accordion-collapse collapse ${paymentAccordionOpen ? 'show' : ''}`} data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2"/>
-                                <label class="form-check-label" for="exampleRadios2">
+                        <div className="accordion-body">
+                            <div className="form-check">
+                                <input className="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2"/>
+                                <label className="form-check-label" htmlFor="exampleRadios2">
                                     Cash on Delivery
                                 </label>
                             </div>
-                            
-                           
-                       </div>
+                            <div className="form-check">
+                                <input className="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2"/>
+                                <label className="form-check-label" htmlFor="exampleRadios2">
+                                    Pay with Card (Stripe)
+                                </label>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -124,5 +125,5 @@ const Payment = () => {
         </>
     )
 }
-
+ 
 export default Payment;
