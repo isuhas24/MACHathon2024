@@ -2,13 +2,15 @@ import React from "react";
 
 import CartProduct from "./cartProducts";
 import style from "../styles/cartstyles.module.css";
-import Header from "./header";
-import Footer from "./footer";
+
+
+import CartSummary from "./cartSummary";
+import Payment from './Payment'
+
 
 const Cart = () => {
   return (
     <>
-      <Header />
       <br />
       <div className={style.cart_body}>
         <h1 className={style.cart_heading}>Shopping Cart</h1>
@@ -25,7 +27,6 @@ const Cart = () => {
         </div>
       </div>
 
-      <Footer />
     </>
   );
 };

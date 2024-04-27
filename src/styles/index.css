@@ -618,7 +618,6 @@ p.availibility {
 .sign-up {
   width: 1320px;
   height: fit-content;
-  background: rgba(0, 30, 43, 1) url("../../public/Images/pattern.svg") no-repeat;
   color: #fff;
   display: flex;
   flex-wrap: wrap;

@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from 'react';
+
+
 import '../styles/index.css';
 import '../styles/mobile.css';
+import React, { useContext, useEffect, useState } from 'react';
 import style from "../styles/cartstyles.module.css";
 import { useNavigate } from 'react-router-dom';
 import Payment from './Payment';

@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
+
+
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import "./payment.css"
 
 
 
@@ -47,9 +50,10 @@ const Payment = () => {
                 [id]: value
             }));
         };
+
     return(
         <>
-            <div class="accordion" id="accordionExample">
+            <div class="accordion shipping" id="accordionExample">
                 <div class="accordion-item">
                     <h2 class="accordion-header">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -102,16 +106,19 @@ const Payment = () => {
                         Payment
                     </button>
                     </h2>
+
                     <div id="collapseTwo" className={`accordion-collapse collapse ${paymentAccordionOpen ? 'show' : ''}`} data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        <input type="radio" id="cash-on-delivery" name="payment-mode" value="cash-on-delivery" />
-                        <label htmlFor="cash-on-delivery">Cash on Delivery</label>
 
-
-                        <input type="radio" id="stripe" name="payment-mode" value="stripe" />
-                        <label htmlFor="stripe">Stripe</label>
-                        </div>
-
+                        <div class="accordion-body">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2"/>
+                                <label class="form-check-label" for="exampleRadios2">
+                                    Cash on Delivery
+                                </label>
+                            </div>
+                            
+                           
+                       </div>
                     </div>
                 </div>
             </div>

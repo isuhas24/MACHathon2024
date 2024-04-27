@@ -1,5 +1,4 @@
-import "../styles/index.css";
-import "../styles/mobile.css";
+
 
 let Footer = () =>{
     return(

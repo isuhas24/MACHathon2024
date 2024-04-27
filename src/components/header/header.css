@@ -1,0 +1,31 @@
+.Headercontainer {
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 8px;
+  background-color: #333;
+  color: #fff;
+  padding: 1%;
+}
+
+#header img {
+  width: 50px;
+  border-radius: 8px;
+}
+
+#header {
+  display: flex;
+}
+
+#header .icons {
+  margin-left: auto; 
+}
+
+#header .icons > * {
+  margin-left: 10px; 
+}
+.icons{
+  font-size: 30px;
+}
+
